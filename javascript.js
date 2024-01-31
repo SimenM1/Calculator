@@ -1,3 +1,4 @@
+//math
 let ans = 0
 let a = 3
 let b = 1
@@ -39,11 +40,34 @@ function operate(operator, firstNr, secondNr) {
 
         case "/":
             return divide()
-
-            
    }
 }
 
 
 operate("+", 2, 6)
 console.log(ans)
+
+//gui
+
+function input(txt) {
+    let inputDiv = document.querySelector(".display");
+    inputDiv.textContent = txt
+}
+
+postDisplay = 0
+
+// input
+let nrBtns = document.querySelectorAll(".nrs")
+console.table(nrBtns)
+for(i = 0; i < nrBtns.length; i++) {
+    let nr = nrBtns[i].textContent
+    nrBtns[i].addEventListener("click", () => {
+        preDisplay = document.querySelector(".display").textContent;
+        input(preDisplay + "" + nr);
+        postDisplay = document.querySelector(".display").textContent;
+        console.log(postDisplay)
+        return postDisplay
+    })
+}
+
+
